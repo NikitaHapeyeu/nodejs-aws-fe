@@ -55,12 +55,12 @@ export const cartSlice = createSlice({
 
 export const addToCart = (product: Product) => async (dispatch: any, getState: any) => {
   dispatch(cartSlice.actions.addToCart(product));
-  const { cart: { items } } = getState();
-  await axios.put(`${API_PATHS.cart}/profile/cart`, { items }, {
-    headers: {
-      Authorization: `Basic ${localStorage.getItem('authorization_token')}`,
-    },
-  })
+  // const { cart: { items } } = getState();
+  // await axios.put(`${API_PATHS.cart}/profile/cart`, { items }, {
+  //   headers: {
+  //     Authorization: `Basic ${localStorage.getItem('authorization_token')}`,
+  //   },
+  // })
 };
 
 export const removeFromCart = (product: Product) => async (dispatch: any, getState: any) => {
