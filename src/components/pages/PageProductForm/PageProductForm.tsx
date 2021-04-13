@@ -5,7 +5,7 @@ import {Product, ProductSchema} from "models/Product";
 import {Formik, Field, FormikProps, FormikValues} from 'formik';
 import {TextField} from 'formik-material-ui';
 import axios from 'axios';
-import {useHistory, useParams} from 'react-router-dom';
+import {useHistory, /*useParams*/} from 'react-router-dom';
 import PaperLayout from "components/PaperLayout/PaperLayout";
 import Typography from "@material-ui/core/Typography";
 import API_PATHS from "constants/apiPaths";
@@ -102,7 +102,8 @@ const emptyValues: any = ProductSchema.cast();
 
 export default function PageProductForm() {
   const history = useHistory();
-  const {id} = useParams();
+  // const {id} = useParams();
+  const id = 1;
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
